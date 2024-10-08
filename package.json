@@ -1,0 +1,16 @@
+{
+  "name": "gamma_doro_telegram_mini_app",
+  "version": "1.0.0",
+  "description": "Responsible for bot utility",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [],
+  "author": "Kalinin Ilya",
+  "license": "ISC",
+  "dependencies": {
+    "telegraf": "^4.16.3"
+  }
+}
