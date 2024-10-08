@@ -13,12 +13,16 @@ bot.command('start', (ctx) => {
     )
 } )
 
-bot.on(message('web_app_data'), async (ctx) => {
-    console.log('hey in bot');
-    const data = JSON.parse(ctx.webAppData.data);  // Парсим полученные данные
-    ctx.reply(`Отладка: ${data?.feedback}` ?? 'Данные пусты');
-});
+// bot.on(message('web_app_data'), async (ctx) => {
+//     console.log('hey in bot');
+//     const data = JSON.parse(ctx.webAppData.data);  // Парсим полученные данные
+//     ctx.reply(`Отладка: ${data?.feedback}` ?? 'Данные пусты');
+// });
 
+bot.on(message('web_app_data'), async (ctx) => {
+    const data = ctx.webAppData.data.json()
+    ctx.reply( `Ваше сообщение: ${data?.feedback}` ?? 'empty message')
+})
 
 bot.launch()
 
